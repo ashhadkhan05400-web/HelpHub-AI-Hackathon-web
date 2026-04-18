@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — AI Center</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .ai-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ai-stat-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .ai-stat-eyebrow {
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .ai-stat-val {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ai-stat-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Recommendations */
+    .ai-recs-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .ai-recs-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .ai-recs-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .ai-rec-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ai-rec-item:last-child { border-bottom: none; }
+
+    .ai-rec-title   { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .ai-rec-summary { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+    .ai-rec-tags    { display: flex; gap: 6px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="create.html">Create Request</a></li>
+      <li><a href="ai-center.html" class="active">AI Center</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-banner">
+    <div class="hero-eyebrow">AI Center</div>
+    <h1 class="hero-title">See what the platform<br>intelligence is noticing.</h1>
+    <p class="hero-sub">AI-like insights summarize demand trends, helper readiness, urgency signals, and request recommendations.</p>
+  </div>
+
+  <div class="content mt-24">
+
+    <div class="ai-stats-grid">
+      <div class="ai-stat-card">
+        <div class="ai-stat-eyebrow">Trend Pulse</div>
+        <div class="ai-stat-val">Web Development</div>
+        <div class="ai-stat-desc">Most common support area based on active community requests.</div>
+      </div>
+      <div class="ai-stat-card">
+        <div class="ai-stat-eyebrow">Urgency Watch</div>
+        <div class="ai-stat-val">2</div>
+        <div class="ai-stat-desc">Requests currently flagged high priority by the urgency detector.</div>
+      </div>
+      <div class="ai-stat-card">
+        <div class="ai-stat-eyebrow">Mentor Pool</div>
+        <div class="ai-stat-val">2</div>
+        <div class="ai-stat-desc">Trusted helpers with strong response history and contribution signals.</div>
+      </div>
+    </div>
+
+    <div class="ai-recs-card">
+      <div class="ai-recs-label">AI Recommendations</div>
+      <h2 class="ai-recs-title">Requests needing attention</h2>
+
+      <div class="ai-rec-item">
+        <div class="ai-rec-title">Need help</div>
+        <div class="ai-rec-summary">Web Development request with high urgency. Best suited for members with relevant expertise.</div>
+        <div class="ai-rec-tags">
+          <span class="chip">Web Development</span>
+          <span class="chip red">High</span>
+        </div>
+      </div>
+
+      <div class="ai-rec-item">
+        <div class="ai-rec-title">Need help making my portfolio responsive before demo day</div>
+        <div class="ai-rec-summary">Responsive layout issue with a short deadline. Best helpers are frontend mentors comfortable with CSS grids and media queries.</div>
+        <div class="ai-rec-tags">
+          <span class="chip">Web Development</span>
+          <span class="chip red">High</span>
+        </div>
+      </div>
+
+      <div class="ai-rec-item">
+        <div class="ai-rec-title">Looking for Figma feedback on a volunteer event poster</div>
+        <div class="ai-rec-summary">A visual design critique request where feedback on hierarchy, spacing, and messaging would create the most value.</div>
+        <div class="ai-rec-tags">
+          <span class="chip">Design</span>
+          <span class="chip orange">Medium</span>
+        </div>
+      </div>
+
+      <div class="ai-rec-item">
+        <div class="ai-rec-title">Need mock interview support for internship applications</div>
+        <div class="ai-rec-summary">Career coaching request focused on confidence-building, behavioral answers, and entry-level frontend interviews.</div>
+        <div class="ai-rec-tags">
+          <span class="chip">Career</span>
+          <span class="chip grey">Low</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

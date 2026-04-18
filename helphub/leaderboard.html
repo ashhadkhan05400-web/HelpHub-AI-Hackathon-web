@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Leaderboard</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .lb-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .lb-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .lb-row:last-child { border-bottom: none; }
+
+    .lb-rank {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      width: 28px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .lb-info   { flex: 1; }
+    .lb-name   { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+    .lb-skills { font-size: 12px; color: var(--text-muted); }
+
+    .lb-score {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--teal);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-banner">
+    <div class="hero-eyebrow">Leaderboard</div>
+    <h1 class="hero-title">Top contributors shaping<br>the community.</h1>
+    <p class="hero-sub">Rankings based on trust scores, solved requests, and consistent contribution signals.</p>
+  </div>
+
+  <div class="content mt-24">
+    <div class="lb-card">
+
+      <div class="lb-row">
+        <div class="lb-rank">#1</div>
+        <div class="avatar" style="background:#f59e0b">AK</div>
+        <div class="lb-info">
+          <div class="lb-name">Ayesha Khan</div>
+          <div class="lb-skills">Figma, UI/UX, HTML/CSS</div>
+        </div>
+        <div class="lb-score">Trust 100%</div>
+      </div>
+
+      <div class="lb-row">
+        <div class="lb-rank">#2</div>
+        <div class="avatar" style="background:#ef4444">HA</div>
+        <div class="lb-info">
+          <div class="lb-name">Hassan Ali</div>
+          <div class="lb-skills">JavaScript, React, Git/GitHub</div>
+        </div>
+        <div class="lb-score">Trust 88%</div>
+      </div>
+
+      <div class="lb-row">
+        <div class="lb-rank">#3</div>
+        <div class="avatar" style="background:#8b5cf6">SN</div>
+        <div class="lb-info">
+          <div class="lb-name">Sara Noor</div>
+          <div class="lb-skills">HTML/CSS, Responsive, Portfolio</div>
+        </div>
+        <div class="lb-score">Trust 75%</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

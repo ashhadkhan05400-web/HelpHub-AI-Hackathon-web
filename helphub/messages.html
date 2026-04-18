@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Messages</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .messages-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+    }
+
+    .messages-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .messages-card-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .messages-card-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .send-card-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .message-thread {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .message-thread:last-child { border-bottom: none; }
+
+    .message-body  { flex: 1; }
+    .message-from  { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .message-text  { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .message-time {
+      background: var(--tag-bg);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="messages.html" class="active">Messages</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-banner">
+    <div class="hero-eyebrow">Interaction / Messaging</div>
+    <h1 class="hero-title">Keep support moving through<br>direct communication.</h1>
+    <p class="hero-sub">Basic messaging gives helpers and requesters a clear follow-up path once a match happens.</p>
+  </div>
+
+  <div class="content mt-24">
+    <div class="messages-layout">
+
+      <!-- Conversation stream -->
+      <div class="messages-card">
+        <div class="messages-card-label">Conversation Stream</div>
+        <h2 class="messages-card-title">Recent messages</h2>
+
+        <div class="message-thread">
+          <div class="message-body">
+            <div class="message-from">Ayesha Khan → Sara Noor</div>
+            <div class="message-text">I checked your portfolio request. Share the breakpoint screenshots and I can suggest fixes.</div>
+          </div>
+          <div class="message-time">09:45 AM</div>
+        </div>
+
+        <div class="message-thread">
+          <div class="message-body">
+            <div class="message-from">Hassan Ali → Ayesha Khan</div>
+            <div class="message-text">Your event poster concept is solid. I would tighten the CTA and reduce the background texture.</div>
+          </div>
+          <div class="message-time">11:10 AM</div>
+        </div>
+
+      </div>
+
+      <!-- Compose -->
+      <div class="messages-card">
+        <div class="messages-card-label">Send Message</div>
+        <h3 class="send-card-title">Start a conversation</h3>
+
+        <div class="form-group">
+          <label>To</label>
+          <select>
+            <option>Ayesha Khan</option>
+            <option>Sara Noor</option>
+            <option>Hassan Ali</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Share support details, ask for files, or suggest next steps." style="resize:vertical"></textarea>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%">Send</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

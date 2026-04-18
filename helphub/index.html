@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Home</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    /* ── Landing-specific styles ── */
+    .main{
+      margin-right: 100px;
+      margin-left: 100px;
+    }
+    .landing-hero {
+      padding: 40px 40px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .landing-left { padding: 8px 0; }
+
+    .landing-eyebrow {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .landing-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 4.5vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .landing-body {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 28px;
+    }
+
+    .landing-cta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .landing-stats { display: flex; }
+
+    .stat-block {
+      padding: 20px 28px 20px 0;
+      border-right: 1px solid var(--border);
+      margin-right: 28px;
+    }
+    .stat-block:last-child { border-right: none; margin-right: 0; }
+
+    .stat-eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-num {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .stat-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      max-width: 140px;
+      font-family:Arial, Helvetica, sans-serif ;
+    }
+
+    /* Right panel */
+    .landing-right {
+      background: var(--dark);
+      border-radius: var(--radius);
+      padding: 32px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landing-right::before {
+      content: '';
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 44px; height: 44px;
+      background: #f59e0b;
+      border-radius: 50%;
+    }
+
+    .live-badge {
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .landing-right-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 1.15;
+      padding-right: 60px;
+    }
+
+    .landing-right-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .feature-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+
+    .feature-item {
+      background: hsl(60deg, 12.12%, 87.06%);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .feature-item-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; color: black; }
+    .feature-item-desc  { color:black; font-size: 12px; line-height: 1.5; }
+    .feature-pct        { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+
+    /* Core flow */
+    .section { padding: 60px 40px 0; }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .flow-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .flow-card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    .flow-card-desc  { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+
+    /* Featured requests grid */
+    .req-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .req-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .req-card-tags   { display: flex; gap: 6px; flex-wrap: wrap; }
+    .req-card-title  { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; line-height: 1.3; }
+    .req-card-desc   { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .req-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .req-card-author { font-size: 13px; font-weight: 500; }
+    .req-card-meta   { font-size: 12px; color: var(--text-muted); }
+
+    .landing-footer {
+      padding: 32px 40px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+  </style>
+</head>
+<body>
+<div class="main">
+
+  <nav style="width: 100%;" >
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="ai-center.html">AI Center</a></li>
+      <li><a class="btn-outline">Live community signals</a></li>
+      <li><a href="login.html" class="btn-teal">Join the platform</a></li>
+    </ul>
+  </nav>
+
+  <div class="landing-hero">
+    <div class="landing-left">
+      <div class="landing-eyebrow">SMIT Grand Coding Night 2026</div>
+      <h1 class="landing-title">Find help faster.<br>Become help<br>that matters.</h1>
+      <p class="landing-body">HelpHub AI is a community-powered support network for students, mentors, creators, and builders. Ask for help, offer help, track impact, and let AI surface smarter matches across the platform.</p>
+      <div class="landing-cta-row">
+        <a href="dashboard.html" class="btn btn-dark">Open product demo</a>
+        <a href="create.html" class="btn btn-secondary">Post a request</a>
+      </div>
+      <div class="landing-stats">
+        <div class="stat-block">
+          <div class="stat-eyebrow">Members</div>
+          <div class="stat-num">384+</div>
+          <div class="stat-desc">Students, mentors, and helpers in the loop.</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-eyebrow">Requests</div>
+          <div class="stat-num">72+</div>
+          <div class="stat-desc">Support posts shared across learning journeys.</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-eyebrow">Solved</div>
+          <div class="stat-num">69+</div>
+          <div class="stat-desc">Problems resolved through fast community action.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-right">
+      <div class="live-badge">Live Product Feel</div>
+      <h2 class="landing-right-title">More than a form. More like an ecosystem.</h2>
+      <p class="landing-right-sub">A polished multi-page experience with AI summaries, trust scores, contribution signals, notifications, and leaderboard momentum built in HTML, CSS, and JavaScript.</p>
+      <div class="feature-list">
+        <div style="color: black;" class="feature-item" >
+          <div class="feature-item-title">AI request intelligence</div>
+          <div class="feature-item-desc">Auto-categorization, urgency detection, tags, rewrite suggestions, and trend snapshots.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item-title">Community trust graph</div>
+          <div class="feature-item-desc">Badges, helper rankings, trust score boosts, and visible contribution history.</div>
+        </div>
+        <div class="feature-item">
+          <div style="color: black;" class="feature-pct">100%</div>
+          <div class="feature-item-desc">Top trust score currently active across the sample mentor network.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Flow -->
+  <div class="section">
+    <div class="section-eyebrow">Core Flow</div>
+    <div class="section-header">
+      <h2 class="section-title" style="margin-bottom:0">From struggling alone to solving together</h2>
+      <a href="login.html" class="btn btn-secondary">Try onboarding AI</a>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-card-title">Ask for help clearly</div>
+        <div class="flow-card-desc">Create structured requests with category, urgency, AI suggestions, and tags that attract the right people.</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-card-title">Discover the right people</div>
+        <div class="flow-card-desc">Use the explore feed, helper lists, notifications, and messaging to move quickly once a match happens.</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-card-title">Track real contribution</div>
+        <div class="flow-card-desc">Trust scores, badges, solved requests, and rankings help the community recognize meaningful support.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Requests -->
+  <div class="section" style="padding-bottom:0">
+    <div class="section-eyebrow">Featured Requests</div>
+    <div class="section-header">
+      <h2 class="section-title" style="margin-bottom:0">Community problems currently in motion</h2>
+      <a href="explore.html" class="btn btn-secondary">View full feed</a>
+    </div>
+    <div class="req-grid">
+      <div class="req-card">
+        <div class="req-card-tags">
+          <span class="chip">Web Development</span>
+          <span class="chip red">High</span>
+          <span class="chip green">Solved</span>
+        </div>
+        <div class="req-card-title">Need help</div>
+        <div class="req-card-desc">helpn needed</div>
+        <div class="req-card-footer">
+          <div>
+            <div class="req-card-author">Ayesha Khan</div>
+            <div class="req-card-meta">Karachi · 1 helper interested</div>
+          </div>
+          <a href="detail.html" class="link-btn">Open details</a>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-card-tags">
+          <span class="chip">Web Development</span>
+          <span class="chip red">High</span>
+          <span class="chip green">Solved</span>
+        </div>
+        <div class="req-card-title">Need help making my portfolio responsive before demo day</div>
+        <div class="req-card-desc">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</div>
+        <div class="req-card-footer">
+          <div>
+            <div class="req-card-author">Sara Noor</div>
+            <div class="req-card-meta">Karachi · 1 helper interested</div>
+          </div>
+          <a href="detail.html" class="link-btn">Open details</a>
+        </div>
+      </div>
+      <div class="req-card">
+        <div class="req-card-tags">
+          <span class="chip">Design</span>
+          <span class="chip orange">Medium</span>
+          <span class="chip teal">Open</span>
+        </div>
+        <div class="req-card-title">Looking for Figma feedback on a volunteer event poster</div>
+        <div class="req-card-desc">I have a draft poster for a campus community event and want sharper hierarchy, spacing, and CTA copy.</div>
+        <div class="req-card-footer">
+          <div>
+            <div class="req-card-author">Ayesha Khan</div>
+            <div class="req-card-meta">Lahore · 1 helper interested</div>
+          </div>
+          <a href="detail.html" class="link-btn">Open details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing-footer">
+    HelpHub AI is built as a premium-feel, multi-page community support product using HTML, CSS, JavaScript, and LocalStorage.
+  </div>
+</div>
+</body>
+</html>

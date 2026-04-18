@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Explore</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .explore-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+
+    .filter-panel {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+
+    .filter-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+
+    .filter-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      margin-top: 16px;
+      display: block;
+    }
+
+    .feed-list { display: flex; flex-direction: column; gap: 16px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="notifications.html">Notifications</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-banner">
+    <div class="hero-eyebrow">Explore / Feed</div>
+    <h1 class="hero-title">Browse help requests with<br>filterable community context.</h1>
+    <p class="hero-sub">Filter by category, urgency, skills, and location to surface the best matches.</p>
+  </div>
+
+  <div class="content mt-24">
+    <div class="explore-layout">
+
+      <!-- Filter sidebar -->
+      <div class="filter-panel">
+        <h2 class="filter-title">Refine the feed</h2>
+
+        <span class="filter-label">Category</span>
+        <select style="margin-bottom:4px">
+          <option>All categories</option>
+          <option>Web Development</option>
+          <option>Design</option>
+          <option>Career</option>
+        </select>
+
+        <span class="filter-label">Urgency</span>
+        <select style="margin-bottom:4px">
+          <option>All urgency levels</option>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+
+        <span class="filter-label">Skills</span>
+        <input type="text" placeholder="React, Figma, Git/GitHub" />
+
+        <span class="filter-label">Location</span>
+        <input type="text" placeholder="Karachi, Lahore, Remote" />
+      </div>
+
+      <!-- Feed -->
+      <div class="feed-list">
+
+        <a href="detail.html" class="feed-card" style="text-decoration:none;color:inherit">
+          <div class="feed-card-tags">
+            <span class="chip">Web Development</span>
+            <span class="chip red">High</span>
+            <span class="chip green">Solved</span>
+          </div>
+          <div class="feed-card-title">Need help</div>
+          <div class="feed-card-desc">helpn needed</div>
+          <div class="feed-card-footer">
+            <div class="feed-card-author-wrap">
+              <div class="feed-card-author">Ayesha Khan</div>
+              <div class="feed-card-meta">Karachi · 1 helper interested</div>
+            </div>
+            <span class="link-btn">Open details</span>
+          </div>
+        </a>
+
+        <a href="detail.html" class="feed-card" style="text-decoration:none;color:inherit">
+          <div class="feed-card-tags">
+            <span class="chip">Web Development</span>
+            <span class="chip red">High</span>
+            <span class="chip green">Solved</span>
+          </div>
+          <div class="feed-card-title">Need help making my portfolio responsive before demo day</div>
+          <div class="feed-card-desc">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</div>
+          <div class="feed-card-skill-tags">
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Responsive</span>
+            <span class="chip">Portfolio</span>
+          </div>
+          <div class="feed-card-footer">
+            <div class="feed-card-author-wrap">
+              <div class="feed-card-author">Sara Noor</div>
+              <div class="feed-card-meta">Karachi · 1 helper interested</div>
+            </div>
+            <span class="link-btn">Open details</span>
+          </div>
+        </a>
+
+        <a href="detail.html" class="feed-card" style="text-decoration:none;color:inherit">
+          <div class="feed-card-tags">
+            <span class="chip">Design</span>
+            <span class="chip orange">Medium</span>
+            <span class="chip teal">Open</span>
+          </div>
+          <div class="feed-card-title">Looking for Figma feedback on a volunteer event poster</div>
+          <div class="feed-card-desc">I have a draft poster for a campus community event and want sharper hierarchy, spacing, and CTA copy.</div>
+          <div class="feed-card-skill-tags">
+            <span class="chip">Figma</span>
+            <span class="chip">Poster</span>
+            <span class="chip">Design Review</span>
+          </div>
+          <div class="feed-card-footer">
+            <div class="feed-card-author-wrap">
+              <div class="feed-card-author">Ayesha Khan</div>
+              <div class="feed-card-meta">Lahore · 1 helper interested</div>
+            </div>
+            <span class="link-btn">Open details</span>
+          </div>
+        </a>
+
+        <a href="detail.html" class="feed-card" style="text-decoration:none;color:inherit">
+          <div class="feed-card-tags">
+            <span class="chip">Career</span>
+            <span class="chip grey">Low</span>
+            <span class="chip green">Solved</span>
+          </div>
+          <div class="feed-card-title">Need mock interview support for internship applications</div>
+          <div class="feed-card-desc">Applying to frontend internships and need someone to practice behavioral and technical interview questions with me.</div>
+          <div class="feed-card-skill-tags">
+            <span class="chip">Interview Prep</span>
+            <span class="chip">Career</span>
+            <span class="chip">Frontend</span>
+          </div>
+          <div class="feed-card-footer">
+            <div class="feed-card-author-wrap">
+              <div class="feed-card-author">Sara Noor</div>
+              <div class="feed-card-meta">Remote · 2 helpers interested</div>
+            </div>
+            <span class="link-btn">Open details</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

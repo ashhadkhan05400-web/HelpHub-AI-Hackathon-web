@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Request Detail</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+    }
+
+    .detail-left  { display: flex; flex-direction: column; gap: 20px; }
+    .detail-right { display: flex; flex-direction: column; gap: 20px; }
+
+    .detail-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-card-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .ai-summary-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .ai-logo {
+      width: 32px; height: 32px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 13px;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .ai-name     { font-weight: 600; font-size: 14px; }
+    .ai-text     { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .ai-tags     { display: flex; gap: 6px; }
+
+    .actions-row { display: flex; align-items: center; gap: 14px; }
+
+    .helper-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .helper-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .helper-info   { flex: 1; }
+    .helper-name   { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+    .helper-skills { font-size: 12px; color: var(--text-muted); }
+
+    .trust-badge {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .helpers-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .requester-nav {
+      display: flex;
+      gap: 16px;
+      padding-top: 4px;
+    }
+
+    .requester-nav a {
+      color: var(--text-muted);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .requester-nav a:hover { color: var(--text); }
+
+    /* Hero override for detail page chips */
+    .hero-chips { display: flex; gap: 8px; margin-bottom: 12px; }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+    }
+
+    .hero-chip.solved {
+      background: rgba(26,122,94,0.3);
+      border-color: rgba(26,122,94,0.4);
+      color: #4eca9a;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="messages.html" class="active">Messages</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-banner">
+    <div class="hero-eyebrow">Request Detail</div>
+    <div class="hero-chips">
+      <span class="hero-chip">Career</span>
+      <span class="hero-chip">Low</span>
+      <span class="hero-chip solved">Solved</span>
+    </div>
+    <h1 class="hero-title">Need mock interview support<br>for internship applications</h1>
+    <p class="hero-sub">Applying to frontend internships and need someone to practice behavioral and technical interview questions with me.</p>
+  </div>
+
+  <div class="content mt-24">
+    <div class="detail-layout">
+
+      <div class="detail-left">
+        <div class="detail-card">
+          <div class="detail-card-label">AI Summary</div>
+          <div class="ai-summary-header">
+            <div class="ai-logo">H</div>
+            <div class="ai-name">HelpHub AI</div>
+          </div>
+          <p class="ai-text">Career coaching request focused on confidence-building, behavioral answers, and entry-level frontend interviews.</p>
+          <div class="ai-tags">
+            <span class="chip">Interview Prep</span>
+            <span class="chip">Career</span>
+            <span class="chip">Frontend</span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-label">Actions</div>
+          <div class="actions-row">
+            <button class="btn btn-primary">I can help</button>
+            <button class="btn btn-secondary">Mark as solved</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-right">
+        <div class="detail-card">
+          <div class="detail-card-label">Requester</div>
+          <nav class="requester-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="explore.html">Explore</a>
+            <a href="messages.html">Messages</a>
+          </nav>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-label">Helpers</div>
+          <div class="helpers-title">People ready to support</div>
+          <div class="helper-item">
+            <div class="avatar" style="background:#f59e0b">AK</div>
+            <div class="helper-info">
+              <div class="helper-name">Ayesha Khan</div>
+              <div class="helper-skills">Figma, UI/UX, HTML/CSS</div>
+            </div>
+            <div class="trust-badge">Trust 100%</div>
+          </div>
+          <div class="helper-item">
+            <div class="avatar" style="background:#ef4444">HA</div>
+            <div class="helper-info">
+              <div class="helper-name">Hassan Ali</div>
+              <div class="helper-skills">JavaScript, React, Git/GitHub</div>
+            </div>
+            <div class="trust-badge">Trust 88%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

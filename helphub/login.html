@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpHub AI — Login</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    .login-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    /* Left dark panel */
+    .login-left {
+      background: var(--dark);
+      border-radius: var(--radius);
+      padding: 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .login-access-eyebrow {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .login-left-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 1.15;
+    }
+
+    .login-left-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .login-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .login-bullets li {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .login-bullets li::before {
+      content: '•';
+      color: #2a9d7f;
+      font-size: 16px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    /* Right white panel */
+    .login-right {
+      background: white;
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .login-right-eyebrow {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .login-right-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-icon">H</div>
+      HelpHub AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="login-wrap">
+    <div class="login-left">
+      <div class="login-access-eyebrow">Community Access</div>
+      <h2 class="login-left-title">Enter the support network.</h2>
+      <p class="login-left-sub">Choose a demo identity, set your role, and jump into a multi-page product flow designed for asking, offering, and tracking help with a premium interface.</p>
+      <ul class="login-bullets">
+        <li>Role-based entry for Need Help, Can Help, or Both</li>
+        <li>Direct path into dashboard, requests, AI Center, and community feed</li>
+        <li>Persistent demo session powered by LocalStorage</li>
+      </ul>
+    </div>
+
+    <div class="login-right">
+      <div class="login-right-eyebrow">Login / Signup</div>
+      <h2 class="login-right-title">Authenticate your community profile</h2>
+
+      <div class="form-group">
+        <label>Select demo user</label>
+        <select>
+          <option>Ayesha Khan</option>
+          <option>Sara Noor</option>
+          <option>Hassan Ali</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Role selection</label>
+        <select>
+          <option>Both</option>
+          <option>Need Help</option>
+          <option>Can Help</option>
+        </select>
+      </div>
+
+      <div class="email-row">
+        <div class="form-group" style="margin-bottom:0">
+          <label>Email</label>
+          <input type="email" value="community@helphub.ai" />
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label>Password</label>
+          <input type="password" value="password" />
+        </div>
+      </div>
+
+      <a href="dashboard.html" class="btn btn-primary" style="width:100%;margin-top:20px;display:flex">Continue to dashboard</a>
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
