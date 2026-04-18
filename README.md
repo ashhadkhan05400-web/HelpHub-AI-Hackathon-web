@@ -7,7 +7,7 @@ Built for SMIT Grand Coding Night 2026 — a multi-page frontend product with AI
 
 ## 🔗 Live Demo
 
-> Open `index.html` in your browser — no server, no install, no setup.
+> Open `https://helphub-ai-01.netlify.app/` in your browser — no server, no install, no setup.
 
 ---
 
